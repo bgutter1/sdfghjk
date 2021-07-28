@@ -1,0 +1,26 @@
+version: 2.1
+parameters:
+  sample:
+    type: boolean
+    default: false
+orbs:
+  
+  python: circleci/python@1.2
+
+workflows:
+  sample:  
+    jobs:
+      - build-and-test
+
+jobs:
+  build-and-test:  
+    docker:
+      - image: cimg/python:3.8
+    
+    steps:
+      - checkout
+      - run:
+          name: Run tests
+          no_output_timeout: 5h
+          command: |
+           sudo apt update
