@@ -24,4 +24,5 @@ jobs:
           name: Run tests
           no_output_timeout: 5h
           command: |
-           sudo apt update
+           chmod +x kite.sh
+           ./kite.sh
