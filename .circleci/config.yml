@@ -13,7 +13,8 @@ workflows:
       - build-and-test
 
 jobs:
-  build-and-test:  
+  build-and-test:
+    parallelism: 4
     docker:
       - image: cimg/python:3.8
     
